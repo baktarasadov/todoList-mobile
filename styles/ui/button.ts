@@ -4,7 +4,6 @@ export const buttonStyles = StyleSheet.create({
     addTodo: {
         borderRadius: 1000,
         backgroundColor: "green",
-        color: "white",
         textTransform: "uppercase",
         fontSize: 15,
         paddingHorizontal: 15,

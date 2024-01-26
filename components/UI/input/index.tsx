@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { TextInput, View } from "react-native";
 import { IInput } from "../../../types/ui/IInput";
 
@@ -9,6 +9,8 @@ const Input: React.FC<IInput> = ({
   style,
   value,
 }) => {
+  console.log("Input render");
+
   return (
     <View>
       <TextInput
@@ -22,4 +24,4 @@ const Input: React.FC<IInput> = ({
   );
 };
 
-export default Input;
+export default memo(Input);

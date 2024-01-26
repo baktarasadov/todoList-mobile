@@ -4,12 +4,10 @@ import Title from "./components/UI/title";
 import Input from "./components/UI/input";
 import { useState } from "react";
 import { inputStyles } from "./styles/ui/input";
-import Footer from "./components/layout/footer";
-import Header from "./components/layout/header";
 import Button from "./components/UI/button";
 import { buttonStyles } from "./styles/ui/button";
 import { ITodo } from "./types/todo/ITodo";
-// import { ITodoItem } from "./types/todo/ITodo";
+import TodoList from "./components/todos/todoList";
 
 export default function App() {
   const [todo, setTodo] = useState<string>("");
@@ -30,10 +28,9 @@ export default function App() {
     }
   };
   return (
-    <View style={styles.container}>
-      <Header />
+    <View>
       <Title>Todo List</Title>
-      <Text>
+      <View style={{ flexDirection: "row", justifyContent: "center" }}>
         <Input
           id="todo"
           value={todo}
@@ -45,9 +42,8 @@ export default function App() {
           Add
         </Button>
         <Text>{erorrMessage}</Text>
-      </Text>
-      <Text>{todo}</Text>
-      <Footer />
+      </View>
+      <TodoList todos={todos} />
     </View>
   );
 }

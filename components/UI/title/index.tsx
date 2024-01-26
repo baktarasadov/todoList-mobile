@@ -1,8 +1,10 @@
-import React, { Children } from "react";
+import React, { Children, memo } from "react";
 import { Text, View } from "react-native";
 import { ITitle } from "../../../types/ui/ITitle";
 
 const Title: React.FC<ITitle> = ({ children }) => {
+  console.log("title render");
+
   return (
     <View>
       <Text>{children}</Text>
@@ -10,4 +12,4 @@ const Title: React.FC<ITitle> = ({ children }) => {
   );
 };
 
-export default Title;
+export default memo(Title);

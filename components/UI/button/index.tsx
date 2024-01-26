@@ -3,8 +3,6 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { IButton } from "../../../types/ui/IButton";
 
 const Button: React.FC<IButton> = ({ children, style, disabled, onClick }) => {
-  console.log("Button render");
-
   return (
     <View>
       <TouchableOpacity disabled={disabled} style={style} onPress={onClick}>

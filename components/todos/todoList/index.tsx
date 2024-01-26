@@ -3,7 +3,7 @@ import { ITodoList } from "../../../types/todo/ITodo";
 import { FlatList, View } from "react-native";
 import TodoItem from "../todoItem";
 
-const TodoList: React.FC<ITodoList> = ({ todos }) => {
+const TodoList: React.FC<ITodoList> = ({ todos, deleteTodo }) => {
   console.log("TodoList render");
 
   return (
@@ -13,7 +13,9 @@ const TodoList: React.FC<ITodoList> = ({ todos }) => {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <View>
-            <TodoItem>{item.text}</TodoItem>
+            <TodoItem deleteTodo={deleteTodo} id={item.id}>
+              {item.text}
+            </TodoItem>
           </View>
         )}
       />

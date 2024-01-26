@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { Alert, StyleSheet, Text, View } from "react-native";
 import Title from "./components/UI/title";
 import Input from "./components/UI/input";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { inputStyles } from "./styles/ui/input";
 import Button from "./components/UI/button";
 import { buttonStyles } from "./styles/ui/button";
@@ -27,6 +27,13 @@ export default function App() {
       setErrorMessage("");
     }
   };
+
+  const handleDelete = useCallback(
+    (id: number) => {
+      setTodos((prevTodos) => prevTodos.filter((element) => element.id !== id));
+    },
+    [setTodos]
+  );
   return (
     <View>
       <Title>Todo List</Title>
@@ -43,7 +50,7 @@ export default function App() {
         </Button>
         <Text>{erorrMessage}</Text>
       </View>
-      <TodoList todos={todos} />
+      <TodoList deleteTodo={handleDelete} todos={todos} />
     </View>
   );
 }

@@ -9,8 +9,6 @@ const Input: React.FC<IInput> = ({
   style,
   value,
 }) => {
-  console.log("Input render");
-
   return (
     <View>
       <TextInput

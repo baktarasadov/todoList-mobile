@@ -2,10 +2,10 @@ import React, { Children, memo } from "react";
 import { Text, View } from "react-native";
 import { ITitle } from "../../../types/ui/ITitle";
 
-const Title: React.FC<ITitle> = ({ children }) => {
+const Title: React.FC<ITitle> = ({ children, style }) => {
   return (
     <View>
-      <Text>{children}</Text>
+      <Text style={style}>{children}</Text>
     </View>
   );
 };

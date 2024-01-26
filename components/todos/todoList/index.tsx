@@ -7,7 +7,14 @@ const TodoList: React.FC<ITodoList> = ({ todos, deleteTodo }) => {
   console.log("TodoList render");
 
   return (
-    <View>
+    <View
+      style={{
+        backgroundColor: "gray",
+        padding: 10,
+        borderRadius: 5,
+        marginTop: 7,
+      }}
+    >
       <FlatList
         data={todos}
         keyExtractor={(item) => item.id.toString()}
